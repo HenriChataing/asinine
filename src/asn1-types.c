@@ -417,6 +417,13 @@ asinine_strerror(asinine_err_t err) {
 		case_for_tag(ASININE_ERROR_INVALID);
 		case_for_tag(ASININE_ERROR_INVALID_UNTRUSTED);
 		case_for_tag(ASININE_ERROR_INVALID_EXPIRED);
+		case_for_tag(ASININE_ERROR_INVALID_ALGORITHM);
+		case_for_tag(ASININE_ERROR_INVALID_ISSUER);
+		case_for_tag(ASININE_ERROR_INVALID_VERSION);
+		case_for_tag(ASININE_ERROR_INVALID_NOT_CA);
+		case_for_tag(ASININE_ERROR_INVALID_PATH_LEN);
+		case_for_tag(ASININE_ERROR_INVALID_KEYUSE);
+		case_for_tag(ASININE_ERROR_DEPRECATED);
 	default:
 		return "UNKNOWN";
 	}
