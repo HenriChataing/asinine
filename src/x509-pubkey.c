@@ -35,6 +35,7 @@ static asinine_err_t parse_ecdsa_pubkey(asn1_parser_t *, x509_pubkey_t *);
 static const pubkey_lookup_t pubkey_algorithms[] = {
     {
         ASN1_OID(1, 2, 840, 113549, 1, 1, 1), X509_PUBKEY_RSA,
+        // TODO: Should be parse_null
         &parse_null_or_empty_params, &parse_rsa_pubkey, false,
     },
     {
@@ -189,6 +190,7 @@ parse_ecdsa_params(asn1_parser_t *parser, x509_pubkey_t *pubkey) {
 		return ASININE_ERROR_UNSUPPORTED;
 	}
 
+	pubkey->has_params         = true;
 	pubkey->params.ecdsa_curve = curve;
 	return ASININE_OK;
 }
